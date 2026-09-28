@@ -9,7 +9,7 @@ Simple random password generator that takes parameters to create word-based pass
 | **Word Category** | All Words, Adjectives, Nouns, Verbs, Tech, Myth, Gaming, Custom Words |
 | **Word Length** | Min/Max from 2–20 characters (longer words included) |
 | **Case Mode** | `none` (lowercase), `first` (First Capital), `random` (rAnDoM CaSe) |
-| **Symbol Sets** | 9 presets — `!@#$%^&*`, `!@#$%`, `~`#@!`, `#%^`, `_-:`, `[{]}`, `|/`, `.,;`, Custom |
+| **Symbol Sets** | 9 presets — `!@#$%^&*`, `!@#$%`, `` ~`#@! ``, `#%^`, `_-:`, `[{]}`, `|/`, `.,;`, Custom |
 | **Number Range** | From/To — 01 to 99 (zero-padded 2 digits) |
 | **Custom Words** | Type directly or load a `.txt` file |
 
@@ -32,21 +32,37 @@ e.g.  Blaze!42  |  cRyPtO#17  |  SynC$99
 
 ## Usage
 
-Run on any Windows PC — no Python or dependencies required. Just double-click `WordForge.exe`.
+### Windows (no Python required)
+
+Download the latest **WordForge.exe** (or installer) from the [Releases](https://github.com/NyetNighy/WordForge/releases) page and double-click it.
+
+### From source
+
+```bash
+python3 wordforge.py
+```
+
+Requires Python 3 with tkinter (included on most Windows installs; on Linux install `python3-tk`).
 
 ## Development
 
-- **Source:** `wordforge.py` — Python 3 + tkinter
+- **Source:** `wordforge.py` — Python 3 + tkinter (stdlib only)
 - **Build:** Cross-compiled via Wine + PyInstaller on Kali Linux
-- **Icon:** Custom lightning bolt (ImageMagick + PIL)
 
 To rebuild the `.exe`:
+
 ```bash
 export WINEPREFIX=~/.wine
-wine C:\Program Files\Python313\python.exe -m PyInstaller \
+wine C:\\Program\ Files\\Python313\\python.exe -m PyInstaller \
   --onefile --windowed --name WordForge \
   --icon WordForge.ico wordforge.py
 ```
+
+Upload the resulting binary to a [GitHub Release](https://github.com/NyetNighy/WordForge/releases/new) instead of committing it to the repository.
+
+## License
+
+MIT — see [LICENSE](LICENSE).
 
 ## GitHub
 
